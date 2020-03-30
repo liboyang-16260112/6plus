@@ -38,20 +38,18 @@
       <thead>
         <tr>
           <th>Company Name公司名称（中文）</th>
-          <th>Company Name公司名称（英文）</th>
           <th>GMC Report Type品牌商认证类型</th>
           <th>GMC Report Url证书地址</th>
           <th>操作</th>
         </tr>
       </thead>
 
-      <tbody>
+      <tbody th:each="b:${brand}">
 
         <tr>
-          <td>globalmarket</td>
-          <td>goblemarket</td>
-          <td>asd</td>
-          <td>www.hihd.com</td>
+          <td th:text="${b.cname}"></td>
+          <td th:text="${b.reporttype}"></td>
+          <td th:text="${b.address}"></td>
           <td>
             <div class="inline position-relative">
               <button class="btn btn-mini btn-info" onclick="goEdit()"><i class="icon-edit"></i></button>
@@ -258,7 +256,7 @@
   });
 
     function goEdit(){
-        window.location.href = "brand-addbrand.html";
+        window.location.href = "/addbrand";
       }
     </script>
     </body>
