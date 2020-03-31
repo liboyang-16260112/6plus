@@ -2,6 +2,8 @@ package com.neu.pojo;
 
 import java.sql.Date;
 
+import org.springframework.stereotype.Component;
+@Component
 public class Ordervo {
 
 	private int order_quantity;

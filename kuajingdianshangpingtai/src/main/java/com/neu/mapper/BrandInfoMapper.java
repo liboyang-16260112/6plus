@@ -9,7 +9,8 @@ import com.neu.pojo.BrandInfo;
 
 @Mapper
 public interface BrandInfoMapper {
-	@Select("select * from brandinfo where cname=#{arg0}")
+	//通过公司名检索品牌信息
+	@Select("select * from brandinfo where cname=#{cname}")
 	public ArrayList<BrandInfo> selectByCname(String cname);
 
 }
