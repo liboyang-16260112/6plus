@@ -1,14 +1,10 @@
 package com.neu.mapper;
 
-import java.util.ArrayList;
-
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import com.neu.pojo.Brand;
-
-import groovyjarjarantlr.collections.List;
 
 @Mapper
 public interface BrandMapper {

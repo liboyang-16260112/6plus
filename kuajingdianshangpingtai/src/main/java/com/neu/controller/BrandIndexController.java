@@ -21,6 +21,11 @@ public class BrandIndexController {
 		return "brand-productInput-attr";
 	}
 
+	@RequestMapping("/productInput-attr2")
+	public String productInputAttr1() {
+		return "brand-productInput-attr2";
+	}
+
 	@RequestMapping("/productInput-pic")
 	public String productInputPic() {
 		return "brand-productInput-pic";

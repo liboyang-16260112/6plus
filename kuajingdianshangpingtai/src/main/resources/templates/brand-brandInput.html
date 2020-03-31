@@ -74,13 +74,13 @@
         </tr>
       </thead>
 
-      <tbody>
+      <tbody th:each="bil:${brandinfolist}">
 
         <tr>
           <th class="center">
              <label><input type="checkbox" class="input"></input><span class="lbl"></span></label>
           </th>
-          <td>globalmarket</td>
+          <td th:text="${bil.bname}"></td>
           <td><img src="image/logo.jpg"  width="160" alt="" /></td>
           <td>
             <div class="inline position-relative">
@@ -92,7 +92,7 @@
 
        </tbody>
     </table>
-<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">新增</button>
+<input type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal" value="新增"></input>
 
 
     <!-- Modal -->

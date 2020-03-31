@@ -33,6 +33,9 @@
 
   </style>
 
+ 
+     
+
     </head>
     <body>
 
@@ -97,7 +100,7 @@
                           <a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>
                           <a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>
                       </div>
-                      <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech=""></input>
+                      <input type="text" name="introduction" data-edit="inserttext" id="voiceBtn" x-webkit-speech=""></input>
                   </div>
 
                   <div id="editor">
@@ -133,7 +136,7 @@
  <!-- Modal -->
 <div style="margin-left: -385px;width: 770px;" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   </div></div></div>
-    <script>
+   <script>
         function initToolbarBootstrapBindings() {
             var fonts = ['Serif', 'Sans', 'Arial', 'Arial Black', 'Courier',
                         'Courier New', 'Comic Sans MS', 'Helvetica', 'Impact', 'Lucida Grande', 'Lucida Sans', 'Tahoma', 'Times',
@@ -172,6 +175,5 @@
         $('#btnsave').click(function () {
             window.location.href = "brand-brandInput";
         })
-    </script>
     </body>
 </html>

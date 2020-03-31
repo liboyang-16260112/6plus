@@ -14,7 +14,6 @@ public class BrandController {
 	private BrandService brandService;
 	@RequestMapping("/brandregtister")
 	public String brandRegister(Brand brand,Model model) {
-		System.out.println(brand.getCname());
 		return brandService.brandRegister(brand,model);
 	}
 
