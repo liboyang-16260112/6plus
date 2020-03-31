@@ -1,5 +1,8 @@
 package com.neu.pojo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Bvojournalaccount {
 	private String buyer_id;
 	private String cname;

@@ -1,5 +1,8 @@
 package com.neu.pojo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class DataDictionary {
 	private int dic_id;
 	private String type;

@@ -1,5 +1,8 @@
 package com.neu.pojo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Debit {
 	private String name;
 	private String email;

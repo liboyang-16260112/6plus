@@ -1,5 +1,8 @@
 package com.neu.pojo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Logistics {
 	private String order_id;
 	private String tracking_number;

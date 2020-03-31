@@ -16,10 +16,10 @@ public class BrandIndexController {
 		return "brand-addbrand";
 	}
 
-	@RequestMapping("/productInput-attr")
-	public String productInputAttr() {
-		return "brand-productInput-attr";
-	}
+	/*
+	 * @RequestMapping("/productInput-attr") public String productInputAttr() {
+	 * return "brand-productInput-attr"; }
+	 */
 
 	@RequestMapping("/productInput-attr2")
 	public String productInputAttr1() {

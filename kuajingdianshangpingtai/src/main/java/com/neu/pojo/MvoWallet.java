@@ -1,5 +1,8 @@
 package com.neu.pojo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class MvoWallet {
 	private String mvoaccount_name;
 	private String seller_id;

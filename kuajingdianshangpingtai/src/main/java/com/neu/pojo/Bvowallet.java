@@ -1,5 +1,8 @@
 package com.neu.pojo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Bvowallet {
 	private String bvoaccount_name;
 	private String cname;

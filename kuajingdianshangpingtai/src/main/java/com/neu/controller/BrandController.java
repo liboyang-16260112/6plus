@@ -12,9 +12,10 @@ import com.neu.service.BrandService;
 public class BrandController {
 	@Autowired
 	private BrandService brandService;
+//品牌商信息功能模块
 	@RequestMapping("/brandregtister")
-	public String brandRegister(Brand brand,Model model) {
-		return brandService.brandRegister(brand,model);
+	public String brandRegister(Brand brand, Model model) {
+		return brandService.brandRegister(brand, model);
 	}
 
 }
