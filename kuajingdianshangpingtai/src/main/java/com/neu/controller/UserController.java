@@ -14,7 +14,7 @@ public class UserController {
 
 	@Autowired
 	private   UserService userService;
-	 @RequestMapping("/regist")
+	 @RequestMapping("regist")
 	    public  String  regist(){
 	    	return "reg";
 	    }
