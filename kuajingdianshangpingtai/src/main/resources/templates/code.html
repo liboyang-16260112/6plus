@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8"></meta>
     </head>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/ace.min.css">
-    <link rel="stylesheet" href="css/ace-skins.min.css">
-    <link rel="stylesheet" href="css/ace-responsive.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css"></link>
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css"></link>
+    <link rel="stylesheet" href="css/font-awesome.min.css"></link>
+    <link rel="stylesheet" href="css/ace.min.css"></link>
+    <link rel="stylesheet" href="css/ace-skins.min.css"></link>
+    <link rel="stylesheet" href="css/ace-responsive.min.css"></link>
   <style>
     body,html{
       width: 100%;
@@ -20,7 +19,6 @@
     <body>
  <div id="main-content" class="clearfix">
   <div id="page-content" class="clearfix">
-
     <div class="page-header position-relative">
               <h1 style="color: #2679b5;">数据字典管理</h1>
             </div>
@@ -28,7 +26,7 @@
       <thead>
         <tr>
           <th class="center">
-            <label><input type="checkbox" class="ace-checkbox-2"><span class="lbl"></span></label>
+            <label><input type="checkbox" class="ace-checkbox-2"></input><span class="lbl"></span></label>
           </th>
           <th>字典类型</th>
           <th>用途描述</th>
@@ -37,48 +35,24 @@
           <th>操作</th>
         </tr>
       </thead>
-
-      <tbody>
-
+      <tbody  th:each="a:${code}">
         <tr>
           <td class="center">
-            <label><input type="checkbox" class="input"><span class="lbl"></span></label>
+            <label><input type="checkbox" class="input"></input><span class="lbl"></span></label>
           </td>
-
-          <td>SEX</td>
-          <td>性别</td>
-          <td>1</td>
-          <td>男</td>
-          <td>
-            <div class="inline position-relative">
-              <button class="btn btn-mini btn-info"  data-toggle="modal" data-target="#myModal"><i class="icon-edit"></i></button>
-              <button class="btn btn-mini btn-danger"><i class="icon-trash"></i></button>
-            </div>
-          </td>
+          <td th:text="${a.dic_type}"></td>
+          <td th:text="${a.dic_description}"></td>
+          <td th:text="${a.dic_code}"></td>
+          <td th:text="${a.dic_value}"></td>
+            <td>          
+            <input    type="button"   th:attr="dic_id=${a.dic_id}"   class="btn btn-info"  value="修改"></input>
+            <input    type="button"  th:attr="dic_id=${a.dic_id}" class="btn btn-danger"  value="删除"></input>
+          </td>        
         </tr>
-
-        <tr>
-          <td class="center">
-            <label><input type="checkbox" class="input"><span class="lbl"></span></label>
-          </td>
-
-          <td>SEX</td>
-          <td>性别</td>
-          <td>0</td>
-          <td>女</td>
-          <td>
-            <div class="inline position-relative" >
-              <button class="btn btn-mini btn-info" data-toggle="modal" data-target="#myModal"><i class="icon-edit"></i></button>
-              <button class="btn btn-mini btn-danger"><i class="icon-trash"></i></button>
-            </div>
-          </td>
-        </tr>
-
-
               </tbody>
     </table>
 
-<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">新增</button>
+<input type="submit"  class="btn btn-primary"  value="新增"  data-toggle="modal" data-target="#myModal"></input>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -89,38 +63,34 @@
         <h4 class="modal-title" id="myModalLabel">数据字典信息</h4>
       </div>
       <div class="modal-body" >
-          <form class="form-horizontal">
-
+          <form class="form-horizontal" action="/insert1" method="post">
             <div class="control-group">
-              <label class="control-label" for="form-field-1">字典类型</label>
+              <label class="control-label" for="form-field-1" >字典类型</label>
               <div class="controls">
-                <input type="text" id="form-field-1" >
+                <input type="text" id="form-field-1" name="dic_type" ></input>
               </div>
             </div>
             <div class="control-group">
-              <label class="control-label" for="form-field-1">用途描述</label>
+              <label class="control-label" for="form-field-1" >用途描述</label>
               <div class="controls">
-                 <input type="text" id="form-field-1" >
+                 <input type="text" id="form-field-1" name="dic_description"></input>
               </div>
             </div>
             <div class="control-group">
-              <label class="control-label" for="form-field-1">编码</label>
+              <label class="control-label" for="form-field-1" >编码</label>
               <div class="controls">
-                <input type="text" id="form-field-1">
+                <input type="text" id="form-field-1" name="dic_code"></input>
               </div>
             </div>
             <div class="control-group">
               <label class="control-label" for="form-field-1">编码值</label>
               <div class="controls">
-                <input type="text" id="form-field-1">
+                <input type="text" id="form-field-1" name="dic_value"></input>
               </div>
             </div>
-
+		<input type="submit"  class="btn btn-default"  value="取消"></input>
+            <input type="submit"  class="btn btn-primary"  value="保存"></input>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
       </div>
     </div>
   </div>
@@ -140,8 +110,11 @@
           }
         })
 
-        $('.btn-danger').click(function(){
-            bootbox.alert("删除成功！");
+       $('.btn.btn-danger').click(function(){
+        	window.location.href="delete1?dic_id="+$(this).attr("dic_id");
+        })
+    	 $('.btn.btn-info').click(function(){
+    		 window.location.href="queryBydid?dic_id="+$(this).attr("dic_id");	
         })
 })
 

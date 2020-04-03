@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8"></meta>
     </head>
@@ -19,15 +18,10 @@
       a:hover{
         cursor: pointer;
       }
-
-
-
   </style>
     <body>
-
 <div id="main-content" class="clearfix">
     <div id="page-content" class="clearfix">
-
     <div class="page-header position-relative">
       <h1 style="color: #2679b5;">管理员<small><i class="icon-double-angle-right"></i> 提现审核</small></h1>
     </div>
@@ -50,7 +44,7 @@
 
         <tr>
           <td class="center">
-            <label><input type="checkbox" class="input"><span class="lbl"></input></span></label>
+            <label><input type="checkbox" class="input"></input><span class="lbl"></span></label>
           </td>
           <td>LOh</td>
           <td>充值</td>
@@ -67,7 +61,7 @@
 
         <tr>
           <td class="center">
-            <label><input type="checkbox" class="input"><span class="lbl"></input></span></label>
+            <label><input type="checkbox" class="input"></input><span class="lbl"></span></label>
           </td>
           <td>LOh</td>
           <td>提现</td>
@@ -84,7 +78,7 @@
 
         <tr>
           <td class="center">
-            <label><input type="checkbox" class="input"><span class="lbl"></input></span></label>
+            <label><input type="checkbox" class="input"></input><span class="lbl"></span></label>
           </td>
           <td>LOh</td>
           <td>充值</td>
@@ -101,7 +95,7 @@
 
         <tr>
           <td class="center">
-            <label><input type="checkbox" class="input"><span class="lbl"></input></span></label>
+            <label><input type="checkbox" class="input"></input><span class="lbl"></span></label>
           </td>
           <td>LOh</td>
           <td>提现</td>
@@ -128,7 +122,7 @@
                         <form class="form-horizontal">
                             <div style="text-align: center">
                                 <label style="display: inline-block;margin-right: 20px">
-                                    <input name="form-field-radio" type="radio"><span class="lbl"> 通过</span>
+                                    <input name="form-field-radio" type="radio"></input><span class="lbl"> 通过</span>
                                 </label>
                                 <label style="display: inline-block">
                                     <input name="form-field-radio" type="radio"></input><span class="lbl"> 不通过</span>
@@ -141,7 +135,12 @@
                                 <!--用来存放item-->
                                 <div id="thelist" class="uploader-list"></div>
                                 <div style="width: 20%;  margin:20px auto;">
-                                    <div id="filePicker" class="webuploader-container" ><div class="webuploader-pick" style="padding: 3px 5px;">选择图片</div><div id="rt_rt_1bn828lkecjk10911jjk1l811ls1" style="position: absolute; top: 0px; left: 0px; width: 86px; height: 40px; overflow: hidden; bottom: auto; right: auto;"><input type="file" name="file" class="webuploader-element-invisible" multiple="multiple" accept="image/*"><label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label></div></div>
+                                    <div id="filePicker" class="webuploader-container" >
+                                    <div class="webuploader-pick" style="padding: 3px 5px;">选择图片</div>
+                                    <div id="rt_rt_1bn828lkecjk10911jjk1l811ls1" style="position: absolute; top: 0px; left: 0px; width: 86px; height: 40px; overflow: hidden; bottom: auto; right: auto;"><input type="file" name="file" class="webuploader-element-invisible" multiple="multiple" accept="image/*"></input>
+                                    <label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+                                    </div>
+                                    </div>
                                     <button id="ctlBtn" class="btn btn-default" >开始上传</button>
                                 </div>
 
@@ -198,7 +197,7 @@
           uploader.on( 'fileQueued', function( file ) {  // webuploader事件.当选择文件后，文件被加载到文件队列中，触发该事件。等效于 uploader.onFileueued = function(file){...} ，类似js的事件定义。
               var $li = $(
                               '<div id="' + file.id + '" class="file-item thumbnail">' +
-                              '<img>' +
+                              '<img>' +'</img>'+
                               '<div class="info">' + file.name + '</div>' +
                               '</div>'
                       ),

@@ -15,7 +15,7 @@ public interface BvoWalletMapper {
 	public Bvowallet selectBvowallet(String bvoaccount_name);
 	
 	@Select("select * from bvowallet where bvoaccount_name=#{bvoaccount_name} and bvoaccount_email=#{bvoaccount_email} and bvoaccount_pwd=#{bvoaccount_pwd}")
-	public int selectBvoAll(Bvowallet bvowallet);
+	public Bvowallet selectBvoAll(Bvowallet bvowallet);
 	
 
 }

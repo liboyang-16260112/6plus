@@ -26,17 +26,19 @@ public class BrandService {
 	public String brandRegister(Brand brand, Model model) {
 		// 先检索对应公司，再展示公司所拥有的品牌信息
 		Brand brand1 = queryByCname(brand.getCname());
+		//ArrayList<BrandInfo> brandInfos=brandInfoMapper.selectByCname(brand.getCname());
 		if (brand1 != null) {
 			// 回显公司信息和品牌信息
 			model.addAttribute("brand", brandMapper.selectByCname(brand.getCname()));
-			model.addAttribute("brandinfolist", brandInfoMapper.selectByCname(brand.getCname()));
+			//model.addAttribute("brandinfolist", brandInfos);
+			//brandInfoMapper.selectByCname(brand.getCname())
 			return "brand-brandInput";
 		} else {
 			int result = brandMapper.insertBrand(brand);
 			if (result == 1) {
 				// 回显公司信息和品牌信息
 				model.addAttribute("brand", brandMapper.selectByCname(brand.getCname()));
-				model.addAttribute("brandinfolist", brandInfoMapper.selectByCname(brand.getCname()));
+				//model.addAttribute("brandinfolist", brandInfoMapper.selectByCname(brand.getCname()));
 				return "brand-brandInput";
 			} else {
 				return "brand-addbrand";

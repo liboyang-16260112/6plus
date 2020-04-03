@@ -2,6 +2,7 @@ package com.neu.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import com.neu.mapper.BvoWalletMapper;
 import com.neu.pojo.Bvowallet;
@@ -11,43 +12,46 @@ public class BvoWalletService {
 	@Autowired
 	private BvoWalletMapper bvoWalletMapper;
 
-	public String queryBvoWallet(Bvowallet bvowallet) {
-		System.out.println(bvowallet.getBvoaccount_name());
+//进入钱包页面后保存按钮的功能
+	public String queryBvoWallet(Bvowallet bvowallet,Model model) {
+
 		if (result(bvowallet.getBvoaccount_name()) != null) {
-			this.queryBvoWalletAll(bvowallet);
+			return queryBvoWalletAll(bvowallet,model);
 		} else {
 			return "brand-wallerAcountRegister2";
 		}
-		return null;
+
 	}
 
 //通过名字查询是否已经存在用户
 	public Bvowallet result(String bvoaccount_name) {
+
 		return bvoWalletMapper.selectBvowallet(bvoaccount_name);
 	}
 
-//查询用户信息
-	public String queryBvoWalletAll(Bvowallet bvowallet) {
-		int result = bvoWalletMapper.selectBvoAll(bvowallet);
-		if (result == 1) {
+//登录
+	public String queryBvoWalletAll(Bvowallet bvowallet,Model model) {
+		Bvowallet result = bvoWalletMapper.selectBvoAll(bvowallet);
+		if (result != null) {
+			 model.addAttribute("bvowallet", bvoWalletMapper.selectBvowallet(bvowallet.getBvoaccount_name()));
 			return "brand-gmcwallerAcount";
 		} else {
-			return "wallet-error1";
+			return "wallet-error";
 		}
 
 	}
 
 //注册钱包信息
-	public String addBvoWallet(Bvowallet bvowallet) {
+	public String addBvoWallet(Bvowallet bvowallet,Model model) {
 		int result1 = bvoWalletMapper.insertBvowallet(bvowallet);
 		if (result1 == 1) {
 			// 回显钱包信息和品牌信息
-			// model.addAttribute("brand", brandMapper.selectByCname(brand.getCname()));
+			 model.addAttribute("bvowallet", bvoWalletMapper.selectBvowallet(bvowallet.getBvoaccount_name()));
 			// model.addAttribute("brandinfolist",
 			// brandInfoMapper.selectByCname(brand.getCname()));
 			return "brand-gmcwallerAcount";
 		} else {
-			return "error";
+			return "wallet-error1";
 		}
 	}
 

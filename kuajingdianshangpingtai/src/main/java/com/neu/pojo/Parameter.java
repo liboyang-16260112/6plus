@@ -3,28 +3,28 @@ package com.neu.pojo;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ParameterManager {
-	private int Parameter_id;
+public class Parameter {
+	private String Parameter_id;
 	private String Parameter_description;
-	private String Parameter_value;
+	private int Parameter_value;
 
-	public ParameterManager() {
+	public Parameter() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public ParameterManager(int parameter_id, String parameter_description, String parameter_value) {
+	public Parameter(String parameter_id, String parameter_description, int parameter_value) {
 		super();
 		Parameter_id = parameter_id;
 		Parameter_description = parameter_description;
 		Parameter_value = parameter_value;
 	}
 
-	public int getParameter_id() {
+	public String getParameter_id() {
 		return Parameter_id;
 	}
 
-	public void setParameter_id(int parameter_id) {
+	public void setParameter_id(String parameter_id) {
 		Parameter_id = parameter_id;
 	}
 
@@ -36,12 +36,13 @@ public class ParameterManager {
 		Parameter_description = parameter_description;
 	}
 
-	public String getParameter_value() {
+	public int getParameter_value() {
 		return Parameter_value;
 	}
 
-	public void setParameter_value(String parameter_value) {
+	public void setParameter_value(int parameter_value) {
 		Parameter_value = parameter_value;
 	}
+
 
 }

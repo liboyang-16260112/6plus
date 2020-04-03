@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class BrandIndexController {
 
 	@RequestMapping("/brandIndex")
-	public String adminIndex() {
+	public String brandIndex() {
 		return "brand-index";
 	}
 
@@ -39,6 +39,10 @@ public class BrandIndexController {
 	@RequestMapping("/bwallerAcountRegister")
 	public String wallerAcountRegister() {
 		return "brand-wallerAcountRegister";
+	}
+	@RequestMapping("/gmcwallerAcountlist")
+	public String gmcwallerAcountlist() {
+		return "brand-gmcwallerAcountlist";
 	}
 
 }

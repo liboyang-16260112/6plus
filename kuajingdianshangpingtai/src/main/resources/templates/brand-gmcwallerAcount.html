@@ -38,10 +38,10 @@
         </tr>
       </thead>
 
-      <tbody>
+      <tbody th:each="bw:${bvowallet}">
         <tr>
-          <td>ace.com</td>
-          <td>$45</td>
+          <td th:text="${bw.bvoaccount_name}">ace.com</td>
+          <td th:text="${bw.bvoccount_fund}"></td>
           <td class="center">
             <div class="inline position-relative" data-toggle="modal" data-target="#myModal">
               <button class="btn btn-mini btn-info">提现</button>
@@ -52,7 +52,7 @@
               </tbody>
     </table>
      <div class="inline position-relative">
-              <button class="btn btn-mini btn-info"><a href="brand-gmcwallerAcountlist.html">提现流水</a></button>
+              <button class="btn btn-mini btn-info"><a href="/gmcwallerAcountlist">提现流水</a></button>
             </div>
 
 
@@ -65,18 +65,18 @@
         <h4 class="modal-title" id="myModalLabel">提现</h4>
       </div>
       <div class="modal-body" >
-          <form class="form-horizontal">
+          <form action="/tixian" method="post">
 
             <div class="control-group">
               <label class="control-label" for="form-field-1">提现：$</label>
               <div class="controls">
-                <input type="text" id="form-field-1" >
+                <input type="text" id="form-field-1" name="transaction_record">
               </div>
             </div>
             <div class="control-group">
               <label class="control-label" for="form-field-1">密码：</label>
               <div class="controls">
-                <input tid="form-field-1" type="password">
+                <input tid="form-field-1" type="password" name="bvoaccount_pwd">
               </div>
             </div>
         </form>

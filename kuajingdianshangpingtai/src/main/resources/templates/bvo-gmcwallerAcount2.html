@@ -29,19 +29,37 @@
     <div id="main-content" class="clearfix">
         <div id="page-content" class="clearfix">
             <div class="page-header position-relative">
-                <h1 style="color: #2679b5;">借卖方<small><i class="icon-double-angle-right"></i> 钱包账号登录</small></h1>
+                <h1 style="color: #2679b5;">借卖方<small><i class="icon-double-angle-right"></i> 钱包账号注册</small></h1>
             </div>
-            <form action="/gotomvoWallet">
+            <form action="/registMvoWallet">
             <div class="Register">
-                <div><label class="green">Email:</label><input type="text" name="mvoaccount_email"></input></div>
+                <div><label class="green">Email:</label><input type="text" id="text_input" name="mvoaccount_email"><input type="button" value="验证邮箱"
+							id="btn_confirm" /></input></input></div>
                 <div><label class="green">Account Name:</label><input type="text" name="mvoaccount_name"></input></div>
                 <div><label class="green">Password:</label><input type="password" name="mvoaccount_pwd"></input></div>
-                <input type="submit" class="btn  btn-success save" value="Save"></input>
+                <input type="submit" class="btn  btn-success save" value="Regist"></input>
             </div>
 </form>
         </div>
     </div>
 
-
+<script type="text/javascript">
+		window.onload = function() {
+			document.getElementById("btn_confirm").onclick = function() {
+				var emil = document.getElementById("text_input").value;
+				var regExp = /^\\w+@\\w{2,3}\\.\\w{2,3}$/
+				//var ok = regExp.test(emil);
+				var emilError = document.getElementById("emilError");
+				if (regExp.test(emil)) {
+					alert("邮箱验证合法")
+				} else {
+					alert("邮箱格式不通过")
+				}
+			}
+			document.getElementById("text_input").onfocus = function() {
+				document.getElementById("emilError").innerText = "";
+			}
+		}
+	</script>
     </body>
 </html>
